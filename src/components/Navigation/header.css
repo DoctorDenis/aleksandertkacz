@@ -1,0 +1,75 @@
+@import url('https://fonts.cdnfonts.com/css/chomsky');
+@import url('https://fonts.cdnfonts.com/css/albertson');
+
+@media only screen and (min-width: 360px) {
+  .logo {
+    text-decoration: none;
+    padding: 2rem 0 2rem;
+    display: block;
+    backdrop-filter: blur(10px);
+
+  }
+
+  .logo__text {
+    font-family: 'Albertson', sans-serif;
+    text-align: center;
+    color: red;
+    /* margin-top: 2rem; */
+  }
+
+  .logo__name {
+    margin: 0rem;
+    font-family: 'Chomsky', sans-serif;
+    color: gold;
+    text-align: center;
+    font-size: 4rem;
+    text-shadow: 0px 0px 1px black, 0px 0px 10px grey;
+  }
+
+  .header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+  }
+
+  .nav_bar {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    align-items: stretch;
+    border: 1px solid red;
+    backdrop-filter: blur(20px);
+    color: rgb(221, 214, 173);
+    border: none;
+    font-size: 1rem;
+
+    border-radius: 20px;
+  }
+
+  .nav_bar__item {
+    width: min-content;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid gold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 25%;
+    padding: 1rem 0rem;
+  }
+
+  .nav_bar__item:hover,
+  .active {
+    background-color: rgb(255, 255, 255, 0.5)
+  }
+
+  .nav_bar a {
+    color: inherit;
+  }
+
+  .sub_menu {
+    border-radius: 20px;
+  }
+}
