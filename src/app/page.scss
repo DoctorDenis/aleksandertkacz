@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@500&display=swap");
+
+@media only screen and (max-width: 380px) {
+  .main {
+    font-family: "PT Serif", serif;
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & * {
+      color: gold;
+      text-decoration: none;
+    }
+    /* height: 100vh; */
+  }
+
+  .image_wrapper {
+    margin-top: 2rem;
+    width: 300px;
+    height: 400px;
+    position: relative;
+  }
+
+  .nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+    height: 100%;
+  }
+
+  .nav__item {
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+  /* 
+  .image {
+    width: 50%;
+    height: 50%;
+  } */
+}

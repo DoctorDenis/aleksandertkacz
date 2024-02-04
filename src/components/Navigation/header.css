@@ -2,14 +2,19 @@
 @import url('https://fonts.cdnfonts.com/css/albertson');
 
 @media only screen and (min-width: 300px) {
-  .header__text {
+  .logo {
+    text-decoration: none;
+  }
+
+  .logo__text {
     font-family: 'Albertson', sans-serif;
     text-align: center;
     color: red;
     margin-top: 2rem;
+    text-decoration: none;
   }
 
-  .header__name {
+  .logo__name {
     margin: 1rem;
     font-family: 'Chomsky', sans-serif;
     color: gold;
