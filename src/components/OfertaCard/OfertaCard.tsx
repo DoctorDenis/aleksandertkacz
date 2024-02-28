@@ -10,12 +10,11 @@ export default function OfertaCard() {
   const flipCard: React.MouseEventHandler<HTMLDivElement> = (
     event: React.MouseEvent<HTMLDivElement>
   ) => {
-    console.log(event.target);
     setFlipped(!flipped);
   };
 
   return (
-    <div className="flip-card" onClick={flipCard}>
+    <div className="flip-card front" onClick={flipCard}>
       <div className={`flip-card-inner ${flipped ? " flipped" : ""}`}>
         <div className="flip-card-front">Oferta </div>
         <div className="flip-card-back">

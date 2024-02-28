@@ -15,10 +15,12 @@ export default function Header() {
 
   return (
     <>
-      <Link href="/" className={"logo"}>
-        <h1 className="logo__text">Master of illusion</h1>
-        <h2 className={"logo__name"}>Aleksander Tkacz</h2>
-      </Link>
+      <header>
+        <Link href="/" className={"logo"}>
+          <h1 className="logo__text">Master of illusion</h1>
+          <h2 className={"logo__name"}>Aleksander Tkacz</h2>
+        </Link>
+      </header>
       {/* <header className={"header"}> */}
       {/* <nav className={"nav_bar"}>
           <Link href={"/about-us"} className={"nav_bar__item"}>
