@@ -26,6 +26,7 @@ body {
 body {
   font-family: 'PT Serif', serif;
   background: url("/stars.png"), linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%), linear-gradient(rgb(74, 26, 119), rgb(74, 26, 119));
+
   /* background-size: 100px, 100px, cover; */
   /* background-color: rgb(74, 26, 119); */
 }

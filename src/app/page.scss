@@ -1,4 +1,10 @@
-@import url("https://fonts.googleapis.com/css2?family=PT+Serif:wght@500&display=swap");
+@use "sass:math";
+@use "sass:list";
+@import "/src/scss/animations.scss";
+
+$cards: "/ace-of-clubs.png", "/ace-of-spades.png", "/ace-of-hearts.png",
+  "/ace-of-diamonds.png";
+$w: 0;
 
 .card {
   background-color: transparent;
@@ -13,7 +19,6 @@
   transition: transform 0.6s;
   transform-style: preserve-3d;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  border: 1px solid white;
 }
 
 .inner.flipped {
@@ -30,114 +35,163 @@
 }
 
 .front {
-  // background-color: #bbb;
-  color: gold;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  color: gold;
+  text-shadow: 0px 0px 1px black, 0px 0px 3px black, 0px 0px 3px white;
 }
 
 .back {
-  // background-color: transparent;
   color: white;
   transform: rotateY(180deg);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: gold;
+
+  background-image: url("/card-back-side.jpg");
+  background-size: contain;
+  background-repeat: round;
 }
 
-@keyframes hat-flip-animation {
-  from {
-    transform: rotateZ(195deg);
-  }
-  to {
-    transform: rotateZ(0deg);
-  }
-}
-
-@keyframes hat-spit {
-  0% {
-    transform: scale3d(1, 1, 1);
-  }
-  10% {
-    transform: scale3d(0.95, 0.95, 0.95);
-  }
-  90% {
-    transform: scale3d(1.1, 1.1, 1.3);
-  }
-  95% {
-    transform: scale3d(0.95, 0.95, 0.95);
-    filter: drop-shadow(0px 0px 5px white);
-  }
-  97% {
-    filter: drop-shadow(0px 0px 1000px white);
-  }
-  98% {
-    filter: drop-shadow(0px 0px 1000px white);
-  }
-  99% {
-    transform: scale3d(1, 1, 1);
-  }
-  100% {
-    visibility: hidden;
+.main {
+  font-family: "PT Serif", serif;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-top: 10vh;
+  align-items: center;
+  & * {
+    text-decoration: none;
   }
 }
 
-@media screen and (min-width: 300px) {
-  .main {
-    font-family: "PT Serif", serif;
-    width: 80%;
-    height: auto;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & * {
-      color: gold;
-      text-decoration: none;
+.image_wrapper {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  transform: rotateZ(195deg);
+  z-index: 1;
+  animation: hat-glow 2s linear infinite;
+}
+
+.image_wrapper.animated {
+  animation: hat-flip-animation 0.7s cubic-bezier(0.65, 0.05, 0.36, 1) forwards,
+    hat-spit 0.7s 1s ease-out forwards;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 5vh;
+  column-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  padding-bottom: 3rem;
+  // padding-top: 2rem;
+}
+
+.nav__item {
+  top: 70%;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 150px;
+  $w: 150;
+  height: calc($w * 1.333 * 1px);
+  justify-content: center;
+  font-size: 2rem;
+  overflow: hidden;
+  transform: scale(0.5);
+  @for $i from 1 through 4 {
+    &:nth-child(#{$i}) .front {
+      background-image: url(list.nth($cards, $i));
     }
   }
+}
 
-  .image_wrapper {
-    width: 300px;
-    height: 300px;
-    position: relative;
-    transform: rotateZ(195deg);
-  }
-
-  .image_wrapper.animated {
-    animation: hat-flip-animation 1s ease-out forwards,
-      hat-spit 1s 1s ease-out forwards;
-  }
-
-  // ----------------- Cards are out of the hat -------------
-  .nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem 1rem;
-  }
-
-  // ------------------  Cards are in the hat ----------------
-
-  // .nav.in_hat {
-  //   position: relative; /* Allow card positioning */
-  //   width: fit-content; /* Adjust if needed */
-  //   height: fit-content; /* Adjust if needed */
-  // }
-
-  .nav__item {
-    border: 1px solid red;
-    display: flex;
-    align-items: center;
-    height: 200px;
-    width: 150px;
-    justify-content: center;
-    font-size: 2rem;
+.nav__item.animated {
+  @for $i from 4 through 1 {
+    $random_number: math.random(180);
+    &:nth-child(#{$i}) {
+      animation: cards-fly-out #{1 + $i * 0.3}s 1.3s both ease-in-out;
+      & .inner {
+        animation: card-rotation #{1 + $i * 0.3}s 1.3s forwards linear;
+      }
+    }
   }
 }
 
-@media screen and (min-width: 480px) {
+.reserve {
+  perspective: 1000px;
+  border: 1px solid black;
+  position: absolute;
+  bottom: 5vw;
+  right: 5vw;
+  max-width: 30vmax;
+  backdrop-filter: blur(5px);
+  background-color: rgb(0, 0, 0, 10%);
+  color: white;
+  animation: reserve-animation 3s linear infinite forwards;
+  text-align: center;
+  box-shadow: 0px 0px 5px white;
+  border-radius: 10px;
+  padding: 0.5rem 0.2rem;
+  & * {
+    margin-bottom: 0;
+    text-shadow: 0px 0px 3px #000;
+  }
+}
+
+.magicball {
+  position: absolute;
+  bottom: 5vw;
+  right: 5vw;
+  // width: 10vmax;
+  height: auto;
+  display: block;
+  animation: magic-ball-animation 1s linear infinite forwards;
+}
+
+@media only screen and (max-width: 630px) {
+  .nav {
+    width: 320px;
+  }
+}
+@media only screen and (min-width: 631px) {
+  .nav {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .nav {
+    width: 500px;
+  }
+  .nav__item {
+    width: 234px;
+    height: 304px;
+  }
+}
+
+@media only screen and (min-width: 940px) {
+  .nav {
+    width: 966px;
+  }
+  .nav__item {
+    width: 234px;
+    height: 304px;
+  }
+}
+
+@media screen and (min-width: 64px) {
   .image_wrapper {
     width: 400px;
     height: 400px;
