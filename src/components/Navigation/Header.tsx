@@ -17,8 +17,8 @@ export default function Header() {
     <>
       <header>
         <Link href="/" className={"logo"}>
-          <h1 className="logo__text">Master of illusion</h1>
-          <h2 className={"logo__name"}>Aleksander Tkacz</h2>
+          <h1 className="logo__text">Teatr iluzji</h1>
+          <h2 className={"logo__name"}>Aleksandra Tkacza</h2>
         </Link>
       </header>
       {/* <header className={"header"}> */}

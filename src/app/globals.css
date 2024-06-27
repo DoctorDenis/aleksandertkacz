@@ -30,3 +30,7 @@ body {
   /* background-size: 100px, 100px, cover; */
   /* background-color: rgb(74, 26, 119); */
 }
+
+next-route-announcer {
+  display: none;
+}

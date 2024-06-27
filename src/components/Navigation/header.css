@@ -11,16 +11,16 @@
     font-family: 'Albertson', sans-serif;
     text-align: center;
     color: red;
-    margin-top: 2rem;
+    margin-top: 1rem;
     text-decoration: none;
   }
 
   .logo__name {
-    margin: 1rem;
+    margin: 1rem 0rem;
     font-family: 'Chomsky', sans-serif;
     color: gold;
     text-align: center;
-    font-size: 4rem;
+    font-size: 3.8rem;
     text-shadow: 0px 0px 1px black, 0px 0px 10px grey;
   }
 

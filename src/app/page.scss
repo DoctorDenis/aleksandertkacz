@@ -2,8 +2,8 @@
 @use "sass:list";
 @import "/src/scss/animations.scss";
 
-$cards: "/ace-of-clubs.png", "/ace-of-spades.png", "/ace-of-hearts.png",
-  "/ace-of-diamonds.png";
+$cards: "/ace-of-diamonds.png", "/ace-of-spades.png", "/ace-of-clubs.png",
+  "/ace-of-hearts.png";
 $w: 0;
 
 .card {
@@ -65,6 +65,7 @@ $w: 0;
   justify-content: center;
   position: relative;
   margin-top: 10vh;
+  margin-bottom: 10vh;
   align-items: center;
   & * {
     text-decoration: none;
@@ -74,42 +75,67 @@ $w: 0;
 .image_wrapper {
   width: 250px;
   height: 250px;
-  position: relative;
-  transform: rotateZ(195deg);
+  position: absolute;
+  // display: none;
+  top: 0;
   z-index: 1;
-  animation: hat-glow 2s linear infinite;
+  animation: hat-glow 1s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image_wrapper::after {
+  content: "Dotknij!";
+  z-index: 1;
+  font-size: 150%;
+  background-image: linear-gradient(rgb(255, 60, 92), gold);
+  padding: 2rem;
+  -webkit-background-clip: text;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-size: 400%;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  -moz-text-fill-color: transparent;
+  animation: gaslo-gradient linear 3s 0s infinite both;
+  pointer-events: none;
 }
 
 .image_wrapper.animated {
-  animation: hat-flip-animation 0.7s cubic-bezier(0.65, 0.05, 0.36, 1) forwards,
-    hat-spit 0.7s 1s ease-out forwards;
+  animation: hat-spit 0.5s ease-out forwards;
 }
 
 .nav {
   display: flex;
   flex-wrap: wrap;
-  row-gap: 5vh;
-  column-gap: 10px;
+  // row-gap: 5vh;
+  // column-gap: 4px;
   align-items: center;
   justify-content: center;
   position: absolute;
+  bottom: 0;
   top: 0;
+  visibility: hidden;
+  scale: 0.1;
+  width: 100%;
   padding-bottom: 3rem;
-  // padding-top: 2rem;
+  &.animated {
+    animation: nav-expand 1.2s 0.5s linear forwards;
+  }
 }
 
 .nav__item {
-  top: 70%;
   display: flex;
+  box-sizing: content-box;
   align-items: center;
-  position: absolute;
   width: 150px;
+  padding-bottom: 10vh;
   $w: 150;
-  height: calc($w * 1.333 * 1px);
+  height: calc($w * 1.32 * 1px);
   justify-content: center;
   font-size: 2rem;
-  overflow: hidden;
-  transform: scale(0.5);
+
   @for $i from 1 through 4 {
     &:nth-child(#{$i}) .front {
       background-image: url(list.nth($cards, $i));
@@ -118,14 +144,11 @@ $w: 0;
 }
 
 .nav__item.animated {
-  @for $i from 4 through 1 {
-    $random_number: math.random(180);
-    &:nth-child(#{$i}) {
-      animation: cards-fly-out #{1 + $i * 0.3}s 1.3s both ease-in-out;
-      & .inner {
-        animation: card-rotation #{1 + $i * 0.3}s 1.3s forwards linear;
-      }
-    }
+  animation: cards-fly-out both 1.6s 0.5s ease-in-out;
+}
+.nav__item.animated {
+  &:nth-child(n + 3) {
+    animation: cards-fly-out both 1.4s 0.5s ease-in-out;
   }
 }
 
@@ -154,47 +177,70 @@ $w: 0;
   position: absolute;
   bottom: 5vw;
   right: 5vw;
-  // width: 10vmax;
   height: auto;
   display: block;
   animation: magic-ball-animation 1s linear infinite forwards;
 }
 
-@media only screen and (max-width: 630px) {
+@media only screen and (max-width: 640px) {
   .nav {
     width: 320px;
-  }
-}
-@media only screen and (min-width: 631px) {
-  .nav {
-    width: 100%;
+    column-gap: 10px;
   }
 }
 
-@media only screen and (min-width: 800px) {
-  .nav {
-    width: 500px;
-  }
-  .nav__item {
-    width: 234px;
-    height: 304px;
-  }
-}
-
-@media only screen and (min-width: 940px) {
-  .nav {
-    width: 966px;
-  }
-  .nav__item {
-    width: 234px;
-    height: 304px;
-  }
-}
-
-@media screen and (min-width: 64px) {
+@media only screen and (min-width: 641px) {
   .image_wrapper {
     width: 400px;
     height: 400px;
-    position: relative;
+  }
+  .nav {
+    width: 100%;
+    column-gap: 10px;
+  }
+  .nav__item.animated {
+    animation: cards-fly-out both 1.4s 0.5s ease-in-out;
+  }
+  .nav__item.animated {
+    &:nth-child(3n + 1) {
+      animation: cards-fly-out both 1.6s 0.5s ease-in-out;
+      // border: 3px solid red;
+    }
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 959px) {
+  .nav {
+    width: 520px;
+    column-gap: 30px;
+  }
+  .nav__item {
+    width: 234px;
+    height: 304px;
+  }
+  .nav__item.animated {
+    animation: cards-fly-out both 1.6s 0.5s ease-in-out;
+  }
+  .nav__item.animated {
+    &:nth-child(n + 3) {
+      animation: cards-fly-out both 1.4s 0.5s ease-in-out;
+    }
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .nav {
+    width: 100%;
+    column-gap: 5px;
+  }
+  .nav__item {
+    width: 234px;
+    height: 304px;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .nav {
+    column-gap: calc((100vw - 234px * 4) / 4);
   }
 }

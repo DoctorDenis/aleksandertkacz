@@ -1,0 +1,28 @@
+.about {
+  color: rgb(255, 228, 76);
+  text-align: center;
+  width: 80%;
+  max-width: 640px;
+}
+
+.imgwrap {
+  width: 100%;
+  position: relative;
+  // object-fit: contain;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  border-radius: 2rem;
+  box-shadow: 0px 0px 5px rgb(8, 38, 78), 0px 0px 10px whitesmoke;
+}
+
+.o_nas {
+  font-size: 1.5rem;
+  text-align: justify;
+}
+
+.description {
+  margin: 2rem 0rem;
+}

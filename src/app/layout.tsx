@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import magicBallImage from "../../public/magic-ball.png";
+// import magicBallImage from "../../public/magic-ball.png";
 
 import Header from "../components/Navigation/Header";
 import { Inter } from "next/font/google";
@@ -37,15 +37,9 @@ export default function RootLayout({
       >
         <Header></Header>
         <main className="main">{children}</main>
-        <Link href="/reservation">
-          {" "}
+        <Link href="/contacts">
           <div id="reservation" className="reserve">
-            {/* <Image
-            className="magicball"
-            src={magicBallImage}
-            alt="Magic ball. Reservation of the exhibition"
-          ></Image> */}
-            <p>Zarezerwuj, dopóki nie zniknęło!</p>
+            <p>Zarezerwuj termin, zanim zniknie!</p>
           </div>
         </Link>
       </body>

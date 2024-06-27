@@ -1,15 +1,7 @@
-@keyframes hat-flip-animation {
-  from {
-    transform: rotateZ(195deg);
-  }
-  to {
-    transform: rotateZ(0deg);
-  }
-}
-
 @keyframes hat-spit {
   0% {
     transform: scale3d(1, 1, 1);
+    display: block;
   }
   10% {
     transform: scale3d(0.95, 0.95, 0.95);
@@ -30,8 +22,11 @@
   99% {
     transform: scale3d(1, 1, 1);
     position: static;
+    display: block;
   }
   100% {
+    display: none;
+
     visibility: hidden;
     position: absolute;
   }
@@ -39,117 +34,47 @@
 
 @keyframes cards-fly-out {
   0% {
-    transform: scale(0.5);
-    rotate: z -10deg;
+    transform: translateY(0px);
+    // scale: 0.5;
     visibility: hidden;
   }
   10% {
     visibility: visible;
-    transform: translate3d(-10%, -10%, 0) scale(0.55);
   }
   20% {
-    transform: translate3d(-20%, -20%, 0) scale(0.6);
-  }
-  30% {
-    transform: translate3d(-40%, -60%, 0) scale(0.65);
-  }
-  40% {
-    transform: translate3d(-60%, -80%, 0) scale(0.7);
+    transform: translateY(-250%);
   }
   50% {
-    transform: translate3d(-150%, -150%, 0) scale(0.75)
-      rotateZ(#{math.random(180)}deg);
-  }
-  60% {
-    transform: translate3d(-80%, -60%, 0) scale(0.8);
-  }
-  70% {
-    transform: translate3d(-50%, -40%, 0) scale(0.85);
-  }
-  80% {
-    transform: translate3d(-30%, -20%, 0) scale(0.9);
-  }
-  90% {
-    transform: translate3d(-10%, -10%, 0) scale(0.95);
-    position: absolute;
-  }
-  100% {
-    transform: scale(1) translate3d(0, 0, 0);
-    position: relative;
-  }
-}
-
-@keyframes card-rotation {
-  0% {
-    transform: rotateY(#{math.random(180)}deg);
-  }
-  15% {
-    transform: rotateY(90deg);
-    transform: rotateX(110deg);
-  }
-  25% {
-    transform: rotateY(#{math.random(180)}deg);
-    transform: rotateX(#{math.random(180)}deg);
-  }
-  50% {
-    transform: rotateY(#{math.random(180)}deg);
-    transform: rotateX(#{math.random(180)}deg);
-  }
-  65% {
-    transform: rotateY(30deg);
-    transform: rotateX(-49deg);
-  }
-  75% {
-    transform: rotateX(#{math.random(180)}deg);
-    transform: rotateY(#{math.random(180)}deg);
-  }
-  100% {
-    transform: rotateY(0deg);
-    transform: rotateX(0deg);
-  }
-}
-
-@keyframes magic-ball-animation {
-  0% {
-    transform: rotateZ(0deg);
-    filter: drop-shadow(0px -3px 10px white);
-  }
-  25% {
-    filter: drop-shadow(0px -3px 10px lightgreen);
-  }
-  50% {
-    transform: translateY(-20px);
-    filter: drop-shadow(0px -3px 10px skyblue);
-  }
-  90% {
-    filter: drop-shadow(0px -3px 10px gold);
+    // scale: 0.7;
   }
   100% {
     transform: translateY(0px);
-    filter: drop-shadow(0px -3px 10px white);
+    // position: relative;
+    visibility: visible;
+
+    // scale: 1;
   }
 }
 
-@keyframes reserve-animation {
-  // 0% {
-  //   // transform: scale(1);
-  //   text-shadow: 0px 0px 10px white;
-  // }
-  // 25% {
-  //   text-shadow: 0px 0px 10px lightgreen;
-  // }
-  // 50% {
-  //   transform: translateY(-20px);
-  //   text-shadow: 0px 0px 10px skyblue;
-  // }
-  // 90% {
-  //   text-shadow: 0px -3px 10px gold;
-  // }
-  // 100% {
-  //   transform: translateY(0px);
-  //   text-shadow: 0px -3px 10px white;
-  // }
+// @keyframes inner-card-fly-out {
+//   0% {
+//     transform: translateY(0px);
+//   }
+//   20% {
+//     transform: translateY(-50vh);
+//   }
+//   50% {
+//     transform: translateY(-50px);
+//   }
+//   90% {
+//     transform: translateY(-10px);
+//   }
+//   100% {
+//     transform: translateY(0px);
+//   }
+// }
 
+@keyframes reserve-animation {
   0% {
     transform: translateX(0px);
     box-shadow: 0px 0px 10px white;
@@ -195,5 +120,51 @@
   }
   100% {
     filter: drop-shadow(2px 0px 2px white);
+  }
+}
+
+@keyframes nav-expand {
+  0% {
+    scale: 0.1;
+  }
+  50% {
+    scale: 0.5;
+  }
+
+  100% {
+    scale: 1;
+    // flex-wrap: wrap;
+  }
+}
+
+// @keyframes gaslo-gradient {
+//   0% {
+//     background-image: linear-gradient(0.01turn, #ff47d1, #9784ff);
+//   }
+//   25% {
+//     background-image: linear-gradient(0.25turn, #ff47d1, #7259ff);
+//   }
+//   50% {
+//     background-image: linear-gradient(0.5turn, #e058be, #7259ff);
+//   }
+//   75% {
+//     background-image: linear-gradient(0.75turn, #ff47d1, #7259ff);
+//   }
+//   100% {
+//     background-image: linear-gradient(0.99turn, #ff47d1, #7259ff);
+//   }
+// }
+
+@keyframes gaslo-gradient {
+  0% {
+    background-position: left;
+  }
+
+  50% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: left;
   }
 }

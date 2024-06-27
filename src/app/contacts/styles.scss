@@ -1,0 +1,39 @@
+.contacts-page {
+  color: gold;
+  a:link,
+  a:visited {
+    color: inherit;
+  }
+}
+
+.icon {
+  // border: 1px solid red;
+  width: 20vmin;
+  max-width: 100px;
+  height: auto;
+  margin-right: 1rem;
+}
+
+.contact {
+  margin-top: 1rem;
+  text-align: left;
+  p {
+    display: inline;
+  }
+}
+
+.link:last-child {
+  margin-bottom: 2rem;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  font-size: 1rem;
+  p {
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+  }
+}

@@ -8,9 +8,10 @@ import { useState } from "react";
 
 export default function Home() {
   const [animated, setAnimated] = useState(false);
+
   return (
     <>
-      <nav className={"nav"}>
+      <nav className={`nav ${animated ? "animated" : ""}`}>
         <div className={`nav__item card ${animated ? "animated" : ""}`}>
           <div className={`inner`}>
             <Link href={"/about-us"} className="front">
@@ -28,7 +29,9 @@ export default function Home() {
           }}
         >
           <div className={`inner`}>
-            <OfertaCard></OfertaCard>
+            <Link href={"/offer"} className="front">
+              Oferta
+            </Link>
             <div className="back"></div>
           </div>
         </div>
@@ -54,10 +57,12 @@ export default function Home() {
       <div className={`image_wrapper ${animated ? "animated" : ""}`}>
         <Image
           fill
+          priority
           src={"/Magic-Hat.png"}
           alt="Magic Hat"
           onClick={() => setAnimated(true)}
         ></Image>
+        {/* <p className="gaslo">Dotknij!</p> */}
       </div>
     </>
   );
