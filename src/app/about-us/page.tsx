@@ -31,14 +31,14 @@ export default function About(): JSX.Element {
       </p>
       <p className="description o_nas">
         Na początku swojej kariery zawodowej występował z programem scenicznej
-        hipnozy dla dorosłej publiczności pod tytułem " Niesamowite, ale
-        oczywiste " Będąc studentem psychologii i pedagogiki pogłębiał wiedzę z
+        hipnozy dla dorosłej publiczności pod tytułem ' Niesamowite, ale
+        oczywiste ' Będąc studentem psychologii i pedagogiki pogłębiał wiedzę z
         zakresu technik motywacyjnych, sugestii, mentalizmu oraz psygologicznej
         iluzji. Jednak z czasem wybrał iluzję, ponieważ jest sztuką syntetyczną,
         sztuką, która otwiera wiele tajemnic, rozwija umysł, pozwala na bliższy
         kontakt z publicznością, dostarcza nie tylko rozrywkę widzom, ale i
         satysfakcję wykonawcy. Będąc absolwentem Wyższej Szkoły Pedagogicznej,
-        Aleksander Tkacz prowadzi kółko "Młody iluzjonista ". Opracowuje
+        Aleksander Tkacz prowadzi kółko 'Młody iluzjonista '. Opracowuje
         specjalny program, pozwalający dzieciom uczyć się prostych trików,
         rozwijać wyobraźnię, logiczne myślenie oraz koordynację ruchów, co daje
         możliwość nie tylko łatwiej nawiązywać kontakt z rówieśnikami, a przede
