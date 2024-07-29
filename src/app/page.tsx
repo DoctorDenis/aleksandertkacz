@@ -12,7 +12,6 @@ export default function Home() {
 
   function clickHandler() {
     setAnimated(true);
-    console.log(audio.canPlayType("audio/mpeg"));
     setTimeout(() => audio.play(), 250);
   }
 
@@ -31,9 +30,6 @@ export default function Home() {
         <div
           className={`nav__item card ${animated ? "animated" : ""}`}
           id="oferta"
-          onClick={(event) => {
-            console.log(event.target);
-          }}
         >
           <div className={`inner`}>
             <Link href={"/offer"} className="front">
