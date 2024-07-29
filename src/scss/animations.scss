@@ -126,6 +126,7 @@
 @keyframes nav-expand {
   0% {
     scale: 0.1;
+    align-items: flex-start;
   }
   50% {
     scale: 0.5;
@@ -133,7 +134,7 @@
 
   100% {
     scale: 1;
-    // flex-wrap: wrap;
+    align-items: flex-start;
   }
 }
 

@@ -44,3 +44,35 @@
   justify-content: center;
   color: gold;
 }
+
+.outter {
+  width: 100%;
+  max-width: 480px;
+  margin-bottom: 3rem;
+}
+
+.acc {
+  --bs-body-bg: #00000017; // Color of the accordion background
+  --bs-border-color: #000000;
+  --bs-primary-bg-subtle: #2d1d8b78; //Color of the active tab background
+  --bs-body-color: rgb(98, 145, 245); //Color of the inactive tab text
+  --bs-primary-text-emphasis: gold; // Color of the active tab text
+  font-size: 1.2rem;
+  // font-family: "Chomsky", sans-serif;
+  box-shadow: 0px 0px 5px rgba(98, 78, 150, 0.932);
+  .accordion-body {
+    padding: 0.5rem;
+    color: gold;
+    -webkit-backdrop-filter: blur(5px); /* Safari */
+    backdrop-filter: blur(5px);
+  }
+  .accordion-button {
+    font-size: 1.2rem;
+  }
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}

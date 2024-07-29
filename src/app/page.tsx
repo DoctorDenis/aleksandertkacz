@@ -3,11 +3,18 @@
 import Image from "next/image";
 import "./page.scss";
 import Link from "next/link";
-import OfertaCard from "@/components/OfertaCard/OfertaCard";
 import { useState } from "react";
+
+const audio = new Audio("audio.mp3");
 
 export default function Home() {
   const [animated, setAnimated] = useState(false);
+
+  function clickHandler() {
+    setAnimated(true);
+    console.log(audio.canPlayType("audio/mpeg"));
+    setTimeout(() => audio.play(), 250);
+  }
 
   return (
     <>
@@ -60,9 +67,8 @@ export default function Home() {
           priority
           src={"/Magic-Hat.png"}
           alt="Magic Hat"
-          onClick={() => setAnimated(true)}
+          onClick={clickHandler}
         ></Image>
-        {/* <p className="gaslo">Dotknij!</p> */}
       </div>
     </>
   );
