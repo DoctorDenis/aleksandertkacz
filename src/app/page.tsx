@@ -3,12 +3,16 @@
 import Image from "next/image";
 import "./page.scss";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const audio = new Audio("audio.mp3");
+let audio: HTMLAudioElement = new Audio();
 
 export default function Home() {
   const [animated, setAnimated] = useState(false);
+
+  useEffect(() => {
+    audio = new Audio("audio.mp3");
+  }, []);
 
   function clickHandler() {
     setAnimated(true);
