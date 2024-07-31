@@ -23,44 +23,43 @@ export default function Home() {
   return (
     <>
       <nav className={`nav ${animated ? "animated" : ""}`}>
-        <div className={`nav__item card ${animated ? "animated" : ""}`}>
-          <div className={`inner`}>
-            <Link href={"/about-us"} className="front">
-              O nas
-            </Link>
-            <div className="back"></div>
-          </div>
-        </div>
+        {/* <div className={`inner`}> */}
+        <Link
+          href={"/about-us"}
+          className={`nav__item ${animated ? "animated" : ""}`}
+        >
+          O nas
+        </Link>
+        {/* </div> */}
 
-        <div
-          className={`nav__item card ${animated ? "animated" : ""}`}
+        {/* <div className={`inner`}> */}
+        <Link
+          href={"/offer"}
+          className={`nav__item ${animated ? "animated" : ""}`}
           id="oferta"
         >
-          <div className={`inner`}>
-            <Link href={"/offer"} className="front">
-              Oferta
-            </Link>
-            <div className="back"></div>
-          </div>
-        </div>
+          Oferta
+        </Link>
+        {/* </div> */}
 
-        <div className={`nav__item card ${animated ? "animated" : ""}`}>
-          <div className={`inner`}>
-            <Link href={"/contacts"} className={"front"}>
-              Kontakt
-            </Link>
-            <div className="back"></div>
-          </div>
-        </div>
+        {/* <div className={`inner`}> */}
+        <Link
+          href={"/contacts"}
+          className={`nav__item ${animated ? "animated" : ""}`}
+        >
+          Kontakt
+        </Link>
+        {/* </div> */}
 
-        <div className={`nav__item card ${animated ? "animated" : ""}`}>
-          <div className={`inner`}>
-            <Link href={"/galery"} className={"front"}>
-              Galeria
-            </Link>
-            <div className="back"></div>
-          </div>
-        </div>
+        {/* <div className={`inner`}> */}
+        <Link
+          href={"/galery"}
+          className={`nav__item ${animated ? "animated" : ""}`}
+        >
+          Galeria
+        </Link>
+        {/* </div> */}
+        <div className="space"></div>
       </nav>
       <div className={`image_wrapper ${animated ? "animated" : ""}`}>
         <Image

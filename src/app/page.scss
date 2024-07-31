@@ -4,57 +4,6 @@
 
 $cards: "/ace-of-diamonds.png", "/ace-of-spades.png", "/ace-of-clubs.png",
   "/ace-of-hearts.png";
-$w: 0;
-
-.card {
-  background-color: transparent;
-  perspective: 1000px;
-}
-
-.inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
-.inner.flipped {
-  transform: rotateY(180deg);
-}
-
-.front,
-.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-}
-
-.front {
-  color: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  color: gold;
-  text-shadow: 0px 0px 1px black, 0px 0px 3px black, 0px 0px 3px white;
-}
-
-.back {
-  color: white;
-  transform: rotateY(180deg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  background-image: url("/card-back-side.jpg");
-  background-size: contain;
-  background-repeat: round;
-}
 
 .main {
   font-family: "PT Serif", serif;
@@ -76,7 +25,6 @@ $w: 0;
   width: 250px;
   height: 250px;
   position: absolute;
-  // display: none;
   top: 0;
   z-index: 1;
   animation: hat-glow 1s linear infinite;
@@ -109,11 +57,6 @@ $w: 0;
 .nav {
   display: flex;
   flex-wrap: wrap;
-  // row-gap: 5vh;
-  // column-gap: 4px;
-  // align-items: center;
-  align-items: flex-start;
-
   justify-content: center;
   position: absolute;
   bottom: 0;
@@ -132,20 +75,26 @@ $w: 0;
   box-sizing: content-box;
   align-items: center;
   width: 150px;
-  padding-bottom: 10vh;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   $w: 150;
+  color: gold;
+  text-shadow: 0px 0px 1px black, 0px 0px 3px black, 0px 0px 3px white;
   height: calc($w * 1.32 * 1px);
   justify-content: center;
+  margin-bottom: 5rem;
   font-size: 2rem;
-  &:nth-child(n + 3) {
-    padding-bottom: 7rem;
-  }
-
+  background-size: cover;
   @for $i from 1 through 4 {
-    &:nth-child(#{$i}) .front {
+    &:nth-child(#{$i}) {
       background-image: url(list.nth($cards, $i));
     }
   }
+}
+
+.space {
+  width: 100%;
+  height: 20px;
+  visibility: hidden;
 }
 
 .nav__item.animated {
