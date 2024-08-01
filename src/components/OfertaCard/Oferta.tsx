@@ -70,14 +70,32 @@ export default function Oferta() {
                         W interaktywnym spektaklu iluzji pokażemy widzom jak
                         spełniać swoje marzenia oraz udowodnimy, że wszystko o
                         czym marzymy, czego pragniemy – jest w zasięgu naszej
-                        ręki! Odpowiemy na pytania: - o czym marzymy? - po co są
-                        marzenia? - skąd się biorą marzenia? - dlaczego warto
-                        marzyć? - czy marzenia napędzają nas do działania? - czy
-                        za każdym kolejnym marzeniem kryje się następne? - czy
-                        marzenia z okresu dzieciństwa zostają z nami na zawsze?
-                        - czy marzenia są po to, aby je spełniać? - co musimy
-                        zrobić, żeby osiągać cele i spełniać nasze marzenia? -
-                        czy warto być czarodziejem, spełniającym marzenia?
+                        ręki!
+                      </p>
+                      <p>
+                        Odpowiemy na pytania:
+                        <ul>
+                          <li>o czym marzymy?</li>
+                          <li>po co są marzenia?</li>
+                          <li>skąd się biorą marzenia?</li>
+                          <li>dlaczego warto marzyć?</li>
+                          <li>czy marzenia napędzają nas do działania?</li>
+                          <li>
+                            czy za każdym kolejnym marzeniem kryje się następne?
+                          </li>
+                          <li>
+                            czy marzenia z okresu dzieciństwa zostają z nami na
+                            zawsze?
+                          </li>
+                          <li>czy marzenia są po to, aby je spełniać?</li>
+                          <li>
+                            co musimy zrobić, żeby osiągać cele i spełniać nasze
+                            marzenia?
+                          </li>
+                          <li>
+                            czy warto być czarodziejem, spełniającym marzenia?
+                          </li>
+                        </ul>
                       </p>
                     </Accordion.Body>
                   </Accordion.Item>
