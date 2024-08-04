@@ -127,14 +127,19 @@ $cards: "/ace-of-diamonds.png", "/ace-of-spades.png", "/ace-of-clubs.png",
   }
 }
 
-.magicball {
-  position: absolute;
-  bottom: 5vw;
-  right: 5vw;
-  height: auto;
-  display: block;
-  animation: magic-ball-animation 1s linear infinite forwards;
+.hidden {
+  display: none;
+  visibility: hidden;
 }
+
+// .magicball {
+//   position: absolute;
+//   bottom: 5vw;
+//   right: 5vw;
+//   height: auto;
+//   display: block;
+//   animation: magic-ball-animation 1s linear infinite forwards;
+// }
 
 @media only screen and (max-width: 640px) {
   .nav {

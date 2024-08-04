@@ -3,13 +3,15 @@
 import Image from "next/image";
 import "./page.scss";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { DispatchContext } from "./layout";
 
 let audio: HTMLAudioElement;
 
 export default function Home() {
   const [animated, setAnimated] = useState(false);
   const audioRef = useRef(audio);
+  const setHidden = useContext(DispatchContext);
 
   useEffect(() => {
     audioRef.current = new Audio("audio.mp3");
@@ -18,6 +20,9 @@ export default function Home() {
   function clickHandler() {
     setAnimated(true);
     setTimeout(() => audioRef.current.play(), 250);
+    audioRef.current.onended = () => {
+      setHidden("hide");
+    };
   }
 
   return (
